@@ -124,7 +124,7 @@
     font-weight: 400;
     color: var(--text);
     border: none;
-    border-bottom: 1.5px solid var(--border);
+    border-bottom: 1.5px solid #4A6270;
     background: transparent;
     width: 90px;
     outline: none;
@@ -165,7 +165,7 @@
   }
   .field input[type="text"] {
     border: none;
-    border-bottom: 2px solid var(--border);
+    border-bottom: 1.5px solid #4A6270;
     background: transparent;
     padding: 4px 2px;
     font-family: "DM Sans", sans-serif;
@@ -306,7 +306,7 @@
     align-items: center;
     text-align: center;
     padding: 10px 20px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--teal-mid);
     gap: 3px;
   }
   .fi-row:last-child { border-bottom: none; }
@@ -328,7 +328,7 @@
     font-weight: 400;
     color: var(--text);
     border: none;
-    border-bottom: 1.5px solid var(--border);
+    border-bottom: 1.5px solid #4A6270;
     background: transparent;
     width: 100%;
     max-width: 220px;
@@ -363,7 +363,7 @@
   }
   .caps-item {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 6px 12px; border-bottom: 1px solid var(--soft-gray); gap: 6px;
+    padding: 6px 12px; border-bottom: 1px solid #D8EEF2; gap: 6px;
     background: white;
   }
   .caps-item:last-child { border-bottom: none; }
@@ -494,7 +494,7 @@
       padding: 1px !important;
       font-size: 9px !important;
     }
-    .divider           { margin: 5px 0 !important; }
+    .divider           { margin: 5px 0 !important; border-top: 1px solid #B8DDE3 !important; }
     .toggle-row        { margin-bottom: 5px !important; }
     .toggle-group-label { font-size: 8px !important; }
     .toggle-options .opt { padding: 3px 7px !important; font-size: 8.5px !important; }
@@ -503,6 +503,11 @@
     .check-option      { font-size: 8.5px !important; padding: 2px 5px !important; }
     .textarea-field    { margin-bottom: 5px !important; }
     .textarea-field label { font-size: 8px !important; }
+    /* Bigger labels for care/reason sections */
+    .textarea-care label,
+    .textarea-reason label    { font-size: 10px !important; font-weight: 700 !important; }
+    .textarea-care .sublabel,
+    .textarea-reason .sublabel { font-size: 9px !important; color: #000 !important; }
     .textarea-field .sublabel { font-size: 7.5px !important; margin-bottom: 2px !important; }
     .textarea-field textarea {
       border: none !important;
@@ -516,8 +521,8 @@
       overflow: hidden !important;
       height: auto !important;
     }
-    .textarea-field textarea[rows="3"] { height: 103px !important; }
-    .textarea-field textarea[rows="4"] { height: 130px !important; }
+    .textarea-field textarea[rows="2"] { height: 93px !important; }
+    .textarea-field textarea[rows="3"] { height: 121px !important; }
     .patient-type      { padding: 5px 10px !important; margin-bottom: 5px !important; }
     .patient-type-text { font-size: 9px !important; }
     .staff-notes       { padding: 6px 10px !important; }
@@ -561,6 +566,39 @@
     .caps-other-title  { font-size: 8px !important; padding: 4px 8px !important; background: #E07B54 !important; color: white !important; }
     .caps-other-body   { padding: 5px 8px !important; }
     .caps-other-body p { font-size: 8.5px !important; }
+
+    /* ── All text black on white backgrounds ── */
+    .page-title h2,
+    .page-title .tagline,
+    .field label,
+    .field input[type="text"],
+    .checklist-col-label,
+    .check-option span,
+    .toggle-group-label,
+    .textarea-field label,
+    .textarea-field .sublabel,
+    .textarea-field textarea,
+    .code-option span,
+    .code-other-input,
+    .caps-item-name,
+    .caps-page-title,
+    .caps-purpose,
+    .fi-value,
+    .fi-input,
+    .fi-label,
+    .caps-other-body p        { color: #000 !important; }
+
+    /* ── All writable lines → black, uniform ── */
+    .field input[type="text"] {
+      border-bottom: 1.5px solid #000 !important;
+    }
+    .code-other-input         { border-bottom: 1.5px solid #4A6270 !important; }
+    .fi-input                 { border-bottom: 1.5px solid #4A6270 !important; }
+    .textarea-field textarea  {
+      background-image: repeating-linear-gradient(
+        to bottom, transparent, transparent 18px, #4A6270 18px, #4A6270 18.75px
+      ) !important;
+    }
 
     /* ── Colors ── */
     .toggle-options .opt:has(input:checked),
@@ -696,16 +734,16 @@
 
   <hr class="divider">
 
-  <div class="textarea-field">
+  <div class="textarea-field textarea-care">
     <label>Care Patient is Receiving at Kindred Arlington</label>
     <span class="sublabel">e.g., antibiotics, vent weaning, wound care, etc.</span>
-    <textarea rows="3"></textarea>
+    <textarea rows="2"></textarea>
   </div>
 
-  <div class="textarea-field">
+  <div class="textarea-field textarea-reason">
     <label>Reason for ED Visit</label>
     <span class="sublabel">If the primary reason for transfer is lab/diagnostic testing, please state what is needed and why.</span>
-    <textarea rows="4"></textarea>
+    <textarea rows="3"></textarea>
   </div>
 
   <hr class="divider">
