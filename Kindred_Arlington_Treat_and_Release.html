@@ -430,6 +430,10 @@
 
     .print-bar { display: none !important; }
 
+    html, body {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
     .page {
       width: 100% !important;
       max-width: 100% !important;
@@ -441,9 +445,11 @@
       overflow: visible !important;
       height: auto !important;
     }
+    .page:last-of-type,
     .page:last-child {
-      page-break-after: avoid;
-      break-after: avoid;
+      page-break-after: avoid !important;
+      break-after: avoid !important;
+      margin-bottom: 0 !important;
     }
 
     /* Compress spacing */
