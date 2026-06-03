@@ -436,114 +436,162 @@
 
   /* ════════════ PRINT ════════════ */
   @media print {
-    @page { size: letter portrait; margin: 0.45in 0.55in; }
 
-    html, body {
-      background: white !important;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-      font-size: 11px;
+    @page {
+      size: letter portrait;
+      margin: 0.35in 0.4in;
     }
-
-    .print-bar { display: none !important; }
 
     html, body {
       margin: 0 !important;
       padding: 0 !important;
+      background: white !important;
+      font-size: 9.5px !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
     }
+
+    /* ── Hide print button ── */
+    .print-bar { display: none !important; }
+
+    /* ── Page containers ── */
     .page {
       width: 100% !important;
       max-width: 100% !important;
       margin: 0 !important;
       padding: 0 !important;
-      page-break-after: avoid;
-      break-after: avoid;
+      page-break-after: avoid !important;
+      break-after: avoid !important;
       box-shadow: none !important;
       overflow: visible !important;
       height: auto !important;
     }
+
+    /* ── Page break between pages ── */
     .page-break {
-      page-break-after: always !important;
-      break-after: page !important;
+      display: block !important;
       height: 0 !important;
       margin: 0 !important;
       padding: 0 !important;
       border: none !important;
-      display: block !important;
+      page-break-after: always !important;
+      break-after: page !important;
     }
 
-    /* Compress spacing */
-    .header, .caps-header       { margin-bottom: 10px !important; padding-bottom: 10px !important; }
-    .page-title                  { margin-bottom: 10px !important; }
-    .page-title h2               { font-size: 22px !important; }
-    .goal-banner                 { padding: 7px 14px !important; font-size: 12px !important; margin-top: 6px !important; }
-    .form-section                { margin-bottom: 8px !important; }
-    .field-row                   { margin-bottom: 7px !important; gap: 12px !important; }
-    .divider                     { margin: 9px 0 !important; }
-    .checklist-grid              { margin-bottom: 8px !important; }
-    .toggle-row                  { margin-bottom: 8px !important; }
-    .patient-type                { margin-bottom: 8px !important; padding: 8px 12px !important; }
-    .staff-notes                 { padding: 10px 14px !important; }
-    .caps-group                  { margin-bottom: 8px !important; }
-    .caps-item                   { padding: 3px 10px !important; }
-    .caps-purpose                { margin-bottom: 8px !important; }
-    .textarea-field              { margin-bottom: 8px !important; }
+    /* ── Logo ── */
+    .logo-img {
+      height: 64px !important;
+      mix-blend-mode: multiply;
+    }
 
-    /* Logo */
-    .logo-img { mix-blend-mode: multiply; height: 90px !important; }
+    /* ── PAGE 1 SPACING ── */
+    .header            { margin-bottom: 8px !important; padding-bottom: 8px !important; }
+    .page-title        { margin-bottom: 8px !important; }
+    .page-title h2     { font-size: 18px !important; }
+    .page-title .tagline { font-size: 10px !important; }
+    .goal-banner       { font-size: 10.5px !important; padding: 6px 12px !important; margin-top: 5px !important; }
+    .form-section      { margin-bottom: 6px !important; }
+    .field-row         { margin-bottom: 5px !important; gap: 10px !important; }
+    .field label       { font-size: 8px !important; }
+    .divider           { margin: 6px 0 !important; }
+    .toggle-row        { margin-bottom: 5px !important; }
+    .toggle-group-label { font-size: 8.5px !important; }
+    .toggle-options .opt { padding: 3px 8px !important; font-size: 9px !important; }
+    .checklist-grid    { margin-bottom: 5px !important; }
+    .checklist-col-label { font-size: 8px !important; }
+    .check-option      { font-size: 9px !important; padding: 2px 5px !important; }
+    .textarea-field    { margin-bottom: 5px !important; }
+    .textarea-field label { font-size: 8px !important; }
+    .textarea-field .sublabel { font-size: 8.5px !important; margin-bottom: 2px !important; }
+    .patient-type      { padding: 5px 10px !important; margin-bottom: 5px !important; }
+    .patient-type-text { font-size: 10px !important; }
+    .staff-notes       { padding: 6px 10px !important; }
+    .staff-notes h4    { font-size: 8px !important; margin-bottom: 4px !important; }
+    .staff-notes li    { font-size: 9.5px !important; }
+    .bottom-section    { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .code-status-badge { padding: 6px 10px !important; }
+    .code-status-badge > .badge-label { font-size: 8px !important; }
+    .code-option       { font-size: 9.5px !important; }
 
-    /* Text inputs → underlines */
+    /* ── Text inputs → underlines at print ── */
     .field input[type="text"] {
       border: none !important;
-      border-bottom: 1px solid #999 !important;
+      border-bottom: 1px solid #888 !important;
       background: transparent !important;
-      min-height: 18px !important;
-      padding: 2px 2px !important;
+      min-height: 16px !important;
+      padding: 1px 2px !important;
+      font-size: 10px !important;
     }
     .code-other-input {
       border: none !important;
-      border-bottom: 1px solid #999 !important;
+      border-bottom: 1px solid #888 !important;
       background: transparent !important;
     }
     .fi-input {
       border: none !important;
-      border-bottom: 1px solid #999 !important;
+      border-bottom: 1px solid #888 !important;
       background: transparent !important;
     }
 
-    /* Textareas → ruled lines */
-    .textarea-field { margin-bottom: 6px !important; }
+    /* ── Textareas → ruled lines ── */
     .textarea-field textarea {
       border: none !important;
       border-radius: 0 !important;
       background: transparent !important;
       padding: 0 !important;
       background-image: repeating-linear-gradient(
-        to bottom, transparent, transparent 19px, #ccc 19px, #ccc 20px
+        to bottom, transparent, transparent 17px, #ccc 17px, #ccc 18px
       ) !important;
-      line-height: 20px !important;
+      line-height: 18px !important;
       overflow: hidden !important;
       height: auto !important;
     }
-    .textarea-field textarea[rows="3"] { height: 60px !important; }
-    .textarea-field textarea[rows="4"] { height: 80px !important; }
+    .textarea-field textarea[rows="3"] { height: 54px !important; }
+    .textarea-field textarea[rows="4"] { height: 72px !important; }
 
-    /* Preserve toggle/button colors */
+    /* ── PAGE 2 SPACING ── */
+    .caps-header       { margin-bottom: 8px !important; padding-bottom: 8px !important; }
+    .caps-page-title   { font-size: 18px !important; margin-bottom: 4px !important; }
+    .caps-purpose      { font-size: 8.5px !important; margin-bottom: 8px !important; }
+    .caps-columns      { gap: 12px !important; }
+    .caps-group        { margin-bottom: 8px !important; }
+    .caps-group-title  { font-size: 8.5px !important; padding: 4px 8px !important; }
+    .caps-item         { padding: 3px 8px !important; }
+    .caps-item-name    { font-size: 9.5px !important; }
+    .yn-btn            { width: 20px !important; height: 16px !important; font-size: 8.5px !important; }
+    .facility-info     { min-width: 200px !important; }
+    .fi-row            { padding: 6px 12px !important; }
+    .fi-label          { font-size: 8px !important; }
+    .fi-value          { font-size: 10px !important; }
+    .caps-other-title  { font-size: 8.5px !important; padding: 4px 8px !important; }
+    .caps-other-body p { font-size: 9.5px !important; }
+
+    /* ── Preserve colors ── */
     .toggle-options .opt:has(input:checked),
-    .toggle-options .opt.checked              { background: #2A7B8C !important; color: white !important; }
+    .toggle-options .opt.checked {
+      background: #2A7B8C !important; color: white !important;
+    }
     .yn-btn.yes-btn:has(input:checked),
-    .yn-btn.yes-btn.selected                  { background: #2A7B8C !important; color: white !important; }
+    .yn-btn.yes-btn.selected {
+      background: #2A7B8C !important; color: white !important;
+    }
     .yn-btn.no-btn:has(input:checked),
-    .yn-btn.no-btn.selected                   { background: #C47070 !important; color: white !important; }
+    .yn-btn.no-btn.selected {
+      background: #C47070 !important; color: white !important;
+    }
     .code-option input[type="checkbox"],
     .patient-type input[type="checkbox"],
-    .check-option input[type="checkbox"]      { -webkit-print-color-adjust: exact; print-color-adjust: exact; border: 1.5px solid #2A7B8C !important; }
-
-    .caps-page-title { font-size: 20px !important; margin-bottom: 4px !important; }
-    /* Facility info */
-    .facility-info { padding: 0 !important; }
-    .fi-row        { padding: 8px 14px !important; }
+    .check-option input[type="checkbox"] {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      border: 1.5px solid #2A7B8C !important;
+    }
+    .caps-group-title  { background: #2A7B8C !important; color: white !important; }
+    .goal-banner       { background: #2A7B8C !important; color: white !important; }
+    .patient-type      { background: #D8EEF2 !important; }
+    .staff-notes       { background: #EDECEA !important; }
   }
+
 </style>
 </head>
 <body>
