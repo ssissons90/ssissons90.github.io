@@ -417,6 +417,8 @@
     .print-bar { display: none !important; }
   }
 
+  .page-break { display: none; }
+
   /* ════════════ PRINT ════════════ */
   @media print {
     @page { size: letter portrait; margin: 0.3in 0.45in; }
@@ -439,17 +441,20 @@
       max-width: 100% !important;
       margin: 0 !important;
       padding: 0 !important;
-      page-break-after: always;
-      break-after: page;
+      page-break-after: avoid;
+      break-after: avoid;
       box-shadow: none !important;
       overflow: visible !important;
       height: auto !important;
     }
-    .page:last-of-type,
-    .page:last-child {
-      page-break-after: avoid !important;
-      break-after: avoid !important;
-      margin-bottom: 0 !important;
+    .page-break {
+      page-break-after: always !important;
+      break-after: page !important;
+      height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: none !important;
+      display: block !important;
     }
 
     /* Compress spacing */
@@ -670,6 +675,7 @@
   </div>
 </div>
 
+<div class="page-break"></div>
 <!-- ══════════ PAGE 2: CAPABILITIES LIST ══════════ -->
 <div class="page">
   <div class="caps-header">
