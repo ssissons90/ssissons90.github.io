@@ -42,10 +42,10 @@
   /* ── HEADER ── */
   .header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    margin-bottom: 16px;
-    padding-bottom: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 18px;
     border-bottom: 2px solid var(--teal-mid);
     gap: 20px;
   }
@@ -133,7 +133,7 @@
   .code-other-input:focus { border-bottom-color: var(--teal); }
 
   /* ── PAGE TITLE ── */
-  .page-title { margin-bottom: 14px; }
+  .page-title { margin-bottom: 20px; }
   .page-title h2 {
     font-family: "DM Serif Display", serif;
     font-size: 32px;
@@ -153,8 +153,8 @@
   }
 
   /* ── FORM FIELDS ── */
-  .form-section { margin-bottom: 16px; }
-  .field-row { display: flex; gap: 16px; margin-bottom: 12px; }
+  .form-section { margin-bottom: 20px; }
+  .field-row { display: flex; gap: 16px; margin-bottom: 14px; }
   .field { flex: 1; display: flex; flex-direction: column; gap: 2px; }
   .field label {
     font-size: 10.5px;
@@ -173,13 +173,13 @@
     color: var(--text);
     width: 100%;
     outline: none;
-    min-height: 26px;
+    min-height: 32px;
     transition: border-color 0.15s;
   }
   .field input[type="text"]:focus { border-bottom-color: var(--teal); }
 
   /* ── TOGGLES ── */
-  .toggle-row { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; margin-bottom: 9px; }
+  .toggle-row { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; margin-bottom: 14px; }
   .toggle-group { display: flex; align-items: center; gap: 8px; }
   .toggle-group-label {
     font-size: 11px; font-weight: 700; letter-spacing: 0.05em;
@@ -203,7 +203,7 @@
   .toggle-options .opt:has(input:checked) { background: var(--teal); color: white; }
 
   /* ── CHECKLISTS ── */
-  .checklist-grid { display: flex; gap: 16px; margin-bottom: 9px; }
+  .checklist-grid { display: flex; gap: 16px; margin-bottom: 14px; }
   .checklist-col { flex: 1; }
   .checklist-col-label {
     font-size: 9.5px; font-weight: 600; letter-spacing: 0.08em;
@@ -231,7 +231,7 @@
   .check-option input[type="checkbox"]:checked ~ span { color: var(--teal); font-weight: 500; }
 
   /* ── TEXTAREAS ── */
-  .textarea-field { margin-bottom: 10px; }
+  .textarea-field { margin-bottom: 16px; }
   .textarea-field label {
     display: block; font-size: 10.5px; font-weight: 700;
     letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px;
@@ -248,7 +248,7 @@
   }
   .textarea-field textarea:focus { border-color: var(--teal); background: white; }
 
-  .divider { border: none; border-top: 1.5px solid var(--border); margin: 16px 0; }
+  .divider { border: none; border-top: 1.5px solid var(--border); margin: 20px 0; }
 
   /* ── PATIENT TYPE ── */
   .patient-type {
@@ -473,20 +473,21 @@
     }
 
     /* Compress spacing */
-    .header, .caps-header       { margin-bottom: 8px !important; padding-bottom: 8px !important; }
-    .page-title                  { margin-bottom: 8px !important; }
+    .header, .caps-header       { margin-bottom: 10px !important; padding-bottom: 10px !important; }
+    .page-title                  { margin-bottom: 10px !important; }
     .page-title h2               { font-size: 22px !important; }
-    .goal-banner                 { padding: 5px 12px !important; font-size: 11px !important; margin-top: 4px !important; }
-    .form-section                { margin-bottom: 6px !important; }
-    .field-row                   { margin-bottom: 5px !important; gap: 10px !important; }
-    .divider                     { margin: 7px 0 !important; }
-    .checklist-grid              { margin-bottom: 6px !important; }
-    .toggle-row                  { margin-bottom: 6px !important; }
-    .patient-type                { margin-bottom: 6px !important; padding: 6px 10px !important; }
-    .staff-notes                 { padding: 8px 12px !important; }
-    .caps-group                  { margin-bottom: 7px !important; }
-    .caps-item                   { padding: 2px 0 !important; }
+    .goal-banner                 { padding: 7px 14px !important; font-size: 12px !important; margin-top: 6px !important; }
+    .form-section                { margin-bottom: 8px !important; }
+    .field-row                   { margin-bottom: 7px !important; gap: 12px !important; }
+    .divider                     { margin: 9px 0 !important; }
+    .checklist-grid              { margin-bottom: 8px !important; }
+    .toggle-row                  { margin-bottom: 8px !important; }
+    .patient-type                { margin-bottom: 8px !important; padding: 8px 12px !important; }
+    .staff-notes                 { padding: 10px 14px !important; }
+    .caps-group                  { margin-bottom: 8px !important; }
+    .caps-item                   { padding: 3px 10px !important; }
     .caps-purpose                { margin-bottom: 8px !important; }
+    .textarea-field              { margin-bottom: 8px !important; }
 
     /* Logo */
     .logo-img { mix-blend-mode: multiply; height: 90px !important; }
